@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mirror Sync — Decentralized Copy Trading on Solana</title>
+  <meta name="description" content="Mirror Sync is a Solana-native decentralized copy-trading platform. Sync with verified traders, keep custody, and trade with ultra-low fees." />
+  <meta name="theme-color" content="#0f1226" />
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root{--bg:#0b0f1a;--panel:#0f1424;--muted:#9aa4b2;--text:#e8ecf3;--brand:#7c5cff;--brand-2:#00e6d3;--border:#243048;
+      --grad: radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.25), rgba(0,230,211,.12) 40%, transparent 70%),
+              radial-gradient(1000px 500px at 90% 10%, rgba(0,230,211,.18), transparent 60%);}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:var(--bg);color:var(--text);}
+    a{color:inherit;text-decoration:none} .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;background:rgba(11,15,26,.7);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:40}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+    .logo img{height:28px;width:auto;display:block}
+    .nav-links{display:flex;gap:18px} .nav a{font-weight:600;color:var(--muted)} .nav a:hover{color:#fff}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid var(--border);
+      background:linear-gradient(135deg,rgba(124,92,255,.15),rgba(0,230,211,.08));color:#fff;font-weight:700;transition:transform .12s, box-shadow .12s}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,92,255,.18);} .btn.ghost{background:transparent}
+    .hero{position:relative;overflow:hidden} .hero::before{content:"";position:absolute;inset:0;background:var(--grad);pointer-events:none}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:80px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border:1px solid var(--border);border-radius:999px;color:var(--muted)}
+    h1{font-size:clamp(28px,5vw,52px);line-height:1.05;margin:18px 0 12px} .lead{font-size:clamp(16px,2.2vw,20px);color:#c6cce0;margin:0 0 22px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
+    .panel{background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.01));border:1px solid var(--border);border-radius:16px;padding:18px}
+    .token-card{display:flex;flex-direction:column;gap:12px}
+    .kv{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;border:1px dashed var(--border);border-radius:12px}
+    .kv code{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;color:#bfe9ff}
+    .copy{cursor:pointer;padding:8px 12px;border-radius:10px;background:#121a2e;border:1px solid var(--border);}
+    section{padding:56px 0;border-top:1px solid var(--border)} .section-title{font-size:24px;margin:0 0 16px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px} .card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:18px}
+    .muted{color:var(--muted)} footer{border-top:1px solid var(--border);padding:30px 0;color:var(--muted)} .social{display:flex;gap:14px}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">
+        <img src="images/logo.png" alt="Mirror Sync Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+        <span style="display:none">Mirror Sync</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#token">Token</a><a href="#roadmap">Roadmap</a><a href="#docs">Docs</a><a href="#community">Community</a>
+      </nav>
+      <a class="btn" href="#launch"><i class="fa-solid fa-rocket"></i><span>Launch App</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="badge"><i class="fa-brands fa-suse"></i> Solana • Non-custodial • AI-verified</span>
+          <h1>Sync your edge.<br/>Copy trade on Solana — transparently.</h1>
+          <p class="lead">Mirror Sync lets you mirror verified traders (<em>Guides</em>) in real time while keeping full custody of your assets. Ultra-low fees, on-chain performance, community-owned.</p>
+          <div class="cta-row">
+            <a class="btn" href="docs/MIRROR_SYNC_WHITEPAPER.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> Read Whitepaper</a>
+            <a class="btn ghost" href="https://jup.ag/swap/SOL-YOUR_MINT_ADDRESS" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Buy $MIR</a>
+            <a class="btn ghost" href="https://solscan.io/token/YOUR_MINT_ADDRESS" target="_blank"><i class="fa-solid fa-magnifying-glass-chart"></i> View on Solscan</a>
+          </div>
+        </div>
+        <div class="panel token-card">
+          <h3 style="margin:0">$MIR Token</h3>
+          <div class="kv"><span class="muted">Name</span><strong>Mirror Sync</strong></div>
+          <div class="kv"><span class="muted">Symbol</span><strong>MIR</strong></div>
+          <div class="kv"><span class="muted">Mint Address</span>
+            <code id="mintText">YOUR_MINT_ADDRESS</code>
+            <button class="copy" id="copyMint" aria-label="Copy mint address"><i class="fa-regular fa-copy"></i></button>
+          </div>
+          <div class="kv"><span class="muted">Total Supply</span><strong>1,000,000,000 MIR</strong></div>
+          <div class="kv"><span class="muted">Fee Discounts</span><strong>up to 75% (holders)</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="token">
+      <div class="container">
+        <h2 class="section-title">Tokenomics Snapshot</h2>
+        <div class="grid-3">
+          <div class="card"><h3>Community — 50%</h3><p class="muted">Rewards, airdrops, liquidity mining to grow the ecosystem.</p></div>
+          <div class="card"><h3>Investors — 25%</h3><p class="muted">Seed + growth rounds with sensible vesting.</p></div>
+          <div class="card"><h3>Team — 15% • Treasury — 10%</h3><p class="muted">Multi-year vesting for alignment. Treasury funds R&D and partnerships.</p></div>
+        </div>
+        <p class="muted" style="margin-top:10px">Details in the <a href="docs/MIRROR_SYNC_WHITEPAPER.pdf" target="_blank">Whitepaper</a>.</p>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="container">
+        <h2 class="section-title">Roadmap</h2>
+        <div class="grid-3">
+          <div class="card"><h3>Phase 1 — Foundation</h3><ul class="muted"><li>MVP & Testnet launch</li><li>Solana integration</li><li>Community: 1,000 Discord</li></ul></div>
+          <div class="card"><h3>Phase 2 — Growth</h3><ul class="muted"><li>$MIR token launch</li><li>AI verification v2</li><li>Solana partnerships</li></ul></div>
+          <div class="card"><h3>Phase 3 — Scale</h3><ul class="muted"><li>Multi-chain rollout</li><li>Institutional tools</li><li>MAU 10k+</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="docs">
+      <div class="container">
+        <h2 class="section-title">Docs & Community</h2>
+        <div class="grid-3">
+          <div class="card"><h3><i class="fa-regular fa-file-lines"></i> Whitepaper</h3><p class="muted">Technical architecture, AI verification, token model, and governance.</p><p><a class="btn" href="docs/MIRROR_SYNC_WHITEPAPER.pdf" target="_blank">Open PDF</a></p></div>
+          <div class="card"><h3><i class="fa-brands fa-discord"></i> Discord</h3><p class="muted">Join builders, Guides, and Travelers shaping the protocol.</p><p><a class="btn ghost" href="https://discord.gg/YOUR_INVITE" target="_blank">Join Discord</a></p></div>
+          <div class="card"><h3><i class="fa-brands fa-x-twitter"></i> X / Twitter</h3><p class="muted">Follow announcements, dev updates, and airdrops.</p><p><a class="btn ghost" href="https://x.com/YOUR_HANDLE" target="_blank">Follow @MirrorSync</a></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="community">
+      <div class="container" style="text-align:center">
+        <h2 class="section-title">Ready to mirror success?</h2>
+        <p class="lead" style="margin-bottom:18px">Keep custody. Pay less. Trade smarter with on-chain transparency.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn" href="#launch"><i class="fa-solid fa-rocket"></i> Launch App</a>
+          <a class="btn ghost" href="https://jup.ag/swap/SOL-YOUR_MINT_ADDRESS" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Buy $MIR</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <p>© <span id="year"></span> Mirror Sync • mirrorsync.co • <a class="muted" href="mailto:mirrorsyncofficial@gmail.com">mirrorsyncofficial@gmail.com</a></p>
+      <div class="social">
+        <a class="muted" href="https://github.com/YOUR_GITHUB" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="muted" href="https://x.com/YOUR_HANDLE" target="_blank" aria-label="X/Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a class="muted" href="https://discord.gg/YOUR_INVITE" target="_blank" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const mintText = document.getElementById('mintText');
+    document.getElementById('copyMint').addEventListener('click', async (e) => {
+      try {
+        await navigator.clipboard.writeText(mintText.textContent.trim());
+        const b = e.currentTarget; b.innerHTML = '<i class="fa-solid fa-check"></i>'; setTimeout(()=>b.innerHTML = '<i class="fa-regular fa-copy"></i>', 1200);
+      } catch(err){ alert('Copy failed'); }
+    });
+  </script>
+</body>
+        </html>
